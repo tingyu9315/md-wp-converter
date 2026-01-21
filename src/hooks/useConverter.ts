@@ -568,9 +568,6 @@ export function useConverter() {
                         // Calculate visual position
                         // Project (0,0) and (0,1) and (1,0) to find the top-most Y in viewport coordinates
                         // PDF images are drawn in unit square [0,1]x[0,1] transformed by CTM
-                        const p00 = viewport.convertToViewportPoint(ctm[4], ctm[5]);
-                        const p01 = viewport.convertToViewportPoint(ctm[2] + ctm[4], ctm[3] + ctm[5]);
-                        const p10 = viewport.convertToViewportPoint(ctm[0] + ctm[4], ctm[1] + ctm[5]);
                         
                         // In viewport, Y=0 is top. So we want the min Y as the "top" of the image.
                         // However, our text logic uses "transform[5]" which is PDF Y (bottom-up).
@@ -775,9 +772,6 @@ export function useConverter() {
         lines.sort((a, b) => b.y - a.y);
 
         // 5. Build Markdown
-        // ... (Font size calculation remains same, based on text lines only)
-        const textLines = lines.filter(l => l.type === 'text');
-        
         // Use the baseFontSize calculated earlier
         // const fontSizes: Record<number, number> = {};
         // ...

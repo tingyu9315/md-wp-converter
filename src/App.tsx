@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useConverter } from './hooks/useConverter';
 import { 
   FileText, Download, Code, Eye, Printer, 
-  FileType, Trash2, ArrowRightLeft, FileUp, X, Loader2, Save, Image as ImageIcon,
+  FileType, Trash2, FileUp, X, Loader2, Save, Image as ImageIcon,
   Link2, Link2Off, Zap
 } from 'lucide-react';
 import { marked } from 'marked';
